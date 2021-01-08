@@ -49,6 +49,23 @@ export const ContactList = props => {
 									</li>
 								</ul>
 							</div>
+							<div className="col-2">
+								<ul className="list-unstyled list-inline">
+									<li className="list-inline-item">
+										<Link to={`/edit/${index}`}>
+											<i className="fas fa-pencil-alt" />
+										</Link>
+									</li>
+									<li className="list-inline-item">
+										<Link to={`#`}>
+											<i
+												className="fas fa-trash-alt"
+												onClick={e => actions.deleteContact(contact.id)}
+											/>
+										</Link>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</li>
 				);
