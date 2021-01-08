@@ -2,11 +2,16 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { Modal } from "../component/modal";
 
 export const ContactList = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
-
+	const [modal, setModal] = useState(false);
+	const [selectedContact, setSelectedContact] = useState(null);
+	const handleDelete = contact => {
+		setSelectedContact(contact);
+		setModal(true);
+	};
 	return (
 		<ul className="list-group container">
 			{store.contacts.map((contact, index) => {
@@ -58,10 +63,7 @@ export const ContactList = props => {
 									</li>
 									<li className="list-inline-item">
 										<Link to={`#`}>
-											<i
-												className="fas fa-trash-alt"
-												onClick={e => actions.deleteContact(contact.id)}
-											/>
+											<i className="fas fa-trash-alt" onClick={e => handleDelete(contact)} />
 										</Link>
 									</li>
 								</ul>
@@ -70,6 +72,7 @@ export const ContactList = props => {
 					</li>
 				);
 			})}
+			<Modal show={modal} onClose={setModal} contact={selectedContact} delete={actions.deleteContact} />
 		</ul>
 	);
 };

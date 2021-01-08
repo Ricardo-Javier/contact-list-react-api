@@ -79,7 +79,7 @@ export const AddEditContact = props => {
 				</button>
 			</form>
 			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
+				<span className="" href="#" role="button">
 					Back home
 				</span>
 			</Link>
