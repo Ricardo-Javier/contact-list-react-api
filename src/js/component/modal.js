@@ -28,7 +28,7 @@ export const Modal = props => {
 						)}
 					</div>
 					<div className="modal-body">
-						<p>Ummm, I made a bo-bo. Let&apos;s start over, ok?</p>
+						<p>Ummm, I made a boo-boo... Let&apos;s start over, ok?</p>
 					</div>
 					<div className="modal-footer">
 						<button type="button" className="btn btn-primary" onClick={() => props.onClose(false)}>

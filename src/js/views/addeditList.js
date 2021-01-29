@@ -18,7 +18,7 @@ export const AddEditContact = props => {
 
 			{/* add form here */}
 			<form onSubmit={e => e.preventDefault()}>
-				<h1> Add Contact</h1>
+				<h1> {theid ? "Edit" : "Add"} Contact</h1>
 				<div className="form-group">
 					<label htmlFor="exampleFormControlInput1">Full Name</label>
 					<input
@@ -75,7 +75,7 @@ export const AddEditContact = props => {
 					}
 					type="submit"
 					className="addcontact btn btn-primary btn-lg">
-					Add Contact
+					{theid ? "Edit" : "Add"} Contact
 				</button>
 			</form>
 			<Link to="/">
