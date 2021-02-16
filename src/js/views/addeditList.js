@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/index.scss";
 
 export const AddEditContact = props => {
 	const { store, actions } = useContext(Context);
@@ -13,7 +14,7 @@ export const AddEditContact = props => {
 	const [address, setAddress] = useState(typeof theid !== "undefined" ? store.contacts[theid].address : null);
 
 	return (
-		<div className="jumbotron">
+		<div className="container contactlist">
 			<hr className="my-4" />
 
 			{/* add form here */}
@@ -66,7 +67,7 @@ export const AddEditContact = props => {
 				<button
 					onClick={e =>
 						actions.addContact({
-							agenda_slug: "chris-agenda",
+							agenda_slug: "ricardo_agenda",
 							full_name: name,
 							email: email,
 							phone: phone,
@@ -77,12 +78,10 @@ export const AddEditContact = props => {
 					className="addcontact btn btn-primary btn-lg">
 					{theid ? "Edit" : "Add"} Contact
 				</button>
+				<Link to="/">
+					<button className="btn back">Back Home</button>
+				</Link>
 			</form>
-			<Link to="/">
-				<span className="" href="#" role="button">
-					Back home
-				</span>
-			</Link>
 		</div>
 	);
 };

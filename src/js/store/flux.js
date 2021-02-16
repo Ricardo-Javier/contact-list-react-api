@@ -1,6 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	const baseURL = "https://assets.breatheco.de/apis/fake/contact/";
-	const agenda_slug = "chris-agenda";
+	const agenda_slug = "ricardo_agenda";
 	return {
 		store: {
 			contacts: []
